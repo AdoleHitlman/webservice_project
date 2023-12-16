@@ -6,4 +6,8 @@ from django.views.decorators.http import require_http_methods
 def hello(request):
     name = request.GET.get('name', '')
     message = request.GET.get('message', '')
+    if name == '':
+        name = "Recruto"
+    if message == '':
+        message = "Давай дружить"
     return HttpResponse(f'Hello {name}! {message}!')
